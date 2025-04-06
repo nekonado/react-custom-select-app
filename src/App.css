@@ -1,0 +1,13 @@
+.app {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 40;
+}
+
+.contents {
+  display: flex;
+  gap: 80px;
+}

@@ -1,0 +1,88 @@
+// 全体のスタイル
+.custom_select_container
+  position: relative
+  width: 280px
+  margin: 0 auto
+  font-size: 15px
+  font-weight: 500
+  color: #333333
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+  border: 1px solid #aaaaaa
+  border-radius: 8px
+
+// 選択されている項目の表示
+.selected_option
+  background-color: white
+  padding: 16px 20px
+  border-radius: 8px
+  cursor: pointer
+  display: flex
+  justify-content: space-between
+  align-items: center
+  transition: all 0.3s ease
+  -webkit-tap-highlight-color: transparent
+
+// 完全な三角形
+.triangle
+  width: 0
+  height: 0
+  border-left: 6px solid transparent
+  border-right: 6px solid transparent
+  border-top: 10px solid #ee3355
+  transition: transform 0.3s ease
+
+// オプションリスト
+.options_list
+  position: absolute
+  top: calc(100% + 1px)
+  left: 0
+  right: 0
+  background-color: #ffffff
+  border-radius: 0 0 8px 8px
+  z-index: 10
+  max-height: 0
+  overflow: hidden
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0)
+  transition: max-height 0.4s ease, box-shadow 0.3s ease
+
+// オープン状態のスタイル
+.open
+  .options_list
+    max-height: 300px
+    overflow-y: auto
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1)
+
+  .selected_option
+    background-color: #f9f9f9
+
+  .triangle
+    transform: rotate(180deg)
+
+// オプションスタイル
+.option
+  display: block
+  margin: 0 4px
+  padding: 14px 20px
+  text-decoration: none
+  color: #333333
+  border-top: 1px solid #eeeeee
+  transition: all 0.2s ease
+  cursor: pointer
+  &:first-child
+    margin-top: 4px
+  &:last-child
+    margin-bottom: 4px
+
+  &:hover
+    background-color: #f5f9ff
+    color: #0066ff
+
+  // キーボードフォーカス用スタイル
+  &.focused
+    background-color: #f5f9ff
+    color: #0066ff
+    outline: none
+
+// プレースホルダーテキスト
+.placeholder
+  color: #666
